@@ -1,6 +1,7 @@
 let friends: string[] = ['a', 'b'];
 const num: number[] = [1, 2];
 let arrName: [number, string] = [50, 'dd'];
+
 // Reference Type => Object
 const user: {
     readonly firstName: string;
@@ -31,3 +32,11 @@ const bankUser = {
 
 const arr: number[] = [1, 3, 5];
 const newArr: number[] = arr.map((elem: number): number => elem * elem);
+
+// Spread operator 
+
+const fruits1: string[] = ['apple', 'banana', 'cherry'];
+const fruits2: string[] = ['lemon', 'mango'];
+fruits1.push(...fruits2);
+
+

@@ -25,3 +25,7 @@ const bankUser = {
 };
 const arr = [1, 3, 5];
 const newArr = arr.map((elem) => elem * elem);
+// Spread operator 
+const fruits1 = ['apple', 'banana', 'cherry'];
+const fruits2 = ['lemon', 'mango'];
+fruits1.push(...fruits2);
