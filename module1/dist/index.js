@@ -13,5 +13,15 @@ const user = {
 function add(num1, num2) {
     return num1 + num2;
 }
+;
 const addArrow = (num1, num2) => num1 + num2;
-console.log(addArrow(11, 11));
+// Object function method
+const bankUser = {
+    name: 'Rafiz',
+    balance: 0,
+    addBalance(balance) {
+        return `My new balance is : ${this.balance + balance}`;
+    }
+};
+const arr = [1, 3, 5];
+const newArr = arr.map((elem) => elem * elem);
