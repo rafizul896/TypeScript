@@ -14,4 +14,12 @@ const user: {
     isSingle: true
 }
 
-console.log(user);
+// Learning function
+
+function add(num1: number, num2: number) {
+    return num1 + num2
+}
+
+const addArrow = (num1: number, num2: number): number => num1 + num2
+
+console.log(addArrow(11,11))

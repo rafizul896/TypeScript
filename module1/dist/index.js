@@ -9,4 +9,9 @@ const user = {
     Roll: 778452,
     isSingle: true
 };
-console.log(user);
+// Learning function
+function add(num1, num2) {
+    return num1 + num2;
+}
+const addArrow = (num1, num2) => num1 + num2;
+console.log(addArrow(11, 11));
