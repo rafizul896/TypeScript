@@ -84,11 +84,9 @@
 
     type Addition = (num1: number, num2: number) => number
     const addition: Addition = (num1, num2) => num1 + num2;
-
 }
-
+// union types
 {
-    // union types
     type Gendar = 'male' | 'female';
     const newUser: Gendar = 'male';
 
@@ -98,6 +96,56 @@
     type Developer = FrontendDeveloper | DeveloperStack;
 
     const newDeveloper: Developer = 'Full Stack';
-    console.log(newDeveloper)
+    // console.log(newDeveloper)
+}
+// ternary operator 
+{
+    const age: number = 15;
+    if (age >= 18) {
+        console.log('adul');
+    } else {
+        console.log('not adult');
+    }
 
+    const isAdult = age >= 18 ? 'Adult' : 'Not Adult';
+}
+// nullish coalescing operator
+{
+    const isAuthenticated = null;
+    const result1 = isAuthenticated ?? 'Guest';
+    console.log(result1)
+}
+// optional chaining & nullish coalescing operator
+{
+    type UserInfo = {
+        id: number;
+        name: {
+            firstName: string;
+            middleName: string;
+            lastName: string;
+        };
+        address: {
+            city: string;
+            road: string;
+            presentAddress: string;
+            permanentAddress?: string;
+        };
+    }
+
+    const userInfo: UserInfo = {
+        id: 111,
+        name: {
+            firstName: 'Rafizul',
+            middleName: 'Islam',
+            lastName: 'Rafiz'
+        },
+        address: {
+            city: 'Phulpur',
+            road: 'Awesome Road',
+            presentAddress: 'Mymensing Phulpur'
+        }
+    };
+
+    const permanentAddress = userInfo?.address?.permanentAddress ?? 'PermanentAddress is Not Avileble'
+    console.log(permanentAddress);
 }

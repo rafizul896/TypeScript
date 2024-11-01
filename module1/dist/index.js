@@ -1,4 +1,5 @@
 "use strict";
+var _a, _b;
 {
     let friends = ['a', 'b'];
     const num = [1, 2];
@@ -61,8 +62,44 @@
     };
     const addition = (num1, num2) => num1 + num2;
 }
+// union types
 {
     const newUser = 'male';
     const newDeveloper = 'Full Stack';
-    console.log(newDeveloper);
+    // console.log(newDeveloper)
+}
+// ternary operator 
+{
+    const age = 15;
+    if (age >= 18) {
+        console.log('adul');
+    }
+    else {
+        console.log('not adult');
+    }
+    const isAdult = age >= 18 ? 'Adult' : 'Not Adult';
+}
+// nullish coalescing operator
+{
+    const isAuthenticated = null;
+    const result1 = isAuthenticated !== null && isAuthenticated !== void 0 ? isAuthenticated : 'Guest';
+    console.log(result1);
+}
+// optional chaining & nullish coalescing operator
+{
+    const userInfo = {
+        id: 111,
+        name: {
+            firstName: 'Rafizul',
+            middleName: 'Islam',
+            lastName: 'Rafiz'
+        },
+        address: {
+            city: 'Phulpur',
+            road: 'Awesome Road',
+            presentAddress: 'Mymensing Phulpur'
+        }
+    };
+    const permanentAddress = (_b = (_a = userInfo === null || userInfo === void 0 ? void 0 : userInfo.address) === null || _a === void 0 ? void 0 : _a.permanentAddress) !== null && _b !== void 0 ? _b : 'PermanentAddress is Not Avileble';
+    console.log(permanentAddress);
 }
