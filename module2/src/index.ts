@@ -36,4 +36,14 @@
 
     console.log(user)
 }
+// Generic Type
+{
+    // const rollNumbers : number[] = [1,3,5,7,9];
+    const rollNumbers: Array<number> = [1, 3, 5, 7, 9];
 
+    type GenericArray<T> = Array<T> // for reusable
+
+    const students: GenericArray<string> = ['X', 'Y', 'Z'];
+    const boolArray: GenericArray<boolean> = [true, false, true];
+
+} 

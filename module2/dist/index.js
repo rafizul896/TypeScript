@@ -21,3 +21,10 @@
     };
     console.log(user);
 }
+// Generic Type
+{
+    // const rollNumbers : number[] = [1,3,5,7,9];
+    const rollNumbers = [1, 3, 5, 7, 9];
+    const students = ['X', 'Y', 'Z'];
+    const boolArray = [true, false, true];
+}
