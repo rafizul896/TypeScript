@@ -12,3 +12,12 @@
         console.log(err.message);
     }
 }
+// Interface
+{
+    const user = {
+        name: 'Rafizul',
+        age: 35,
+        role: 'user'
+    };
+    console.log(user);
+}
