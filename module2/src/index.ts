@@ -34,7 +34,6 @@
         role: 'user'
     }
 
-    console.log(user)
 }
 // Generic Type
 {
@@ -46,4 +45,18 @@
     const students: GenericArray<string> = ['X', 'Y', 'Z'];
     const boolArray: GenericArray<boolean> = [true, false, true];
 
+    const users: GenericArray<{ name: string, age: number }> = [
+        {
+            name: 'Alon',
+            age: 11
+        },
+        {
+            name: 'Blon',
+            age: 12
+        }
+    ]
+    // Generic Tuple
+    type GenericTuple<X, Y> = [X, Y];
+    const manyThings: GenericTuple<string, number> = ['Apple', 11];
+    const userInfo: GenericTuple<number, { name: string, email: string }> = [11111, { name: 'User', email: 'user@gmail.com' }];
 } 

@@ -19,7 +19,6 @@
         age: 35,
         role: 'user'
     };
-    console.log(user);
 }
 // Generic Type
 {
@@ -27,4 +26,16 @@
     const rollNumbers = [1, 3, 5, 7, 9];
     const students = ['X', 'Y', 'Z'];
     const boolArray = [true, false, true];
+    const users = [
+        {
+            name: 'Alon',
+            age: 11
+        },
+        {
+            name: 'Blon',
+            age: 12
+        }
+    ];
+    const manyThings = ['Apple', 11];
+    const userInfo = [11111, { name: 'User', email: 'user@gmail.com' }];
 }
