@@ -45,7 +45,11 @@
     const students: GenericArray<string> = ['X', 'Y', 'Z'];
     const boolArray: GenericArray<boolean> = [true, false, true];
 
-    const users: GenericArray<{ name: string, age: number }> = [
+    type User = {
+        name: string,
+        age: number
+    }
+    const users: GenericArray<User> = [
         {
             name: 'Alon',
             age: 11
@@ -59,4 +63,56 @@
     type GenericTuple<X, Y> = [X, Y];
     const manyThings: GenericTuple<string, number> = ['Apple', 11];
     const userInfo: GenericTuple<number, { name: string, email: string }> = [11111, { name: 'User', email: 'user@gmail.com' }];
+
+    // Generic with interface
+    interface Developer<T> {
+        name: string,
+        computer: {
+            brand: string,
+            model: string,
+            releaseYear: number
+        },
+        smartWatch: T
+    }
+
+    type PoorDeveloper = {
+        brand: string,
+        model: string,
+        display: string
+    }
+    const poorDeveloper: Developer<PoorDeveloper> = {
+        name: 'Rafizul',
+        computer: {
+            brand: 'Hp',
+            model: 'Pavilion 15',
+            releaseYear: 2022
+        },
+        smartWatch: {
+            brand: 'Emilab',
+            model: 'Kw55',
+            display: 'Oled'
+        }
+    }
+
+    interface RichDeveloper {
+        brand: string,
+        model: string,
+        heartTrack: boolean,
+        sleepTrack: boolean
+    }
+
+    const richDeveloper: Developer<RichDeveloper> = {
+        name: 'Islam',
+        computer: {
+            brand: 'Apple',
+            model: 'applw 15',
+            releaseYear: 2024
+        },
+        smartWatch: {
+            brand: 'Apple Watch',
+            model: 'Kw55',
+            heartTrack: true,
+            sleepTrack: true
+        }
+    }
 } 
