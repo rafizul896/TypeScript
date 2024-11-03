@@ -173,3 +173,29 @@
         }
     );
 }
+
+//  Generic Constraint using key of
+{
+    type Vehicle = {
+        bike: string,
+        car: string,
+        ship: string,
+    }
+
+    type Owner1 = 'bike' | 'car' | 'ship' // manually
+    type Owner2 = keyof Vehicle;
+
+    const person: Owner2 = 'bike';
+
+    const getPropertyValue = <X, Y extends keyof X>(obj: X, key: Y) => {
+        return obj[key]
+    }
+
+    const user = {
+        name: 'Mr. X',
+        age: 100
+    }
+
+    const res = getPropertyValue(user, 'name');
+    console.log(res)
+}

@@ -98,3 +98,16 @@
         email: 'islam@gmail.com'
     });
 }
+//  Generic Constraint using key of
+{
+    const person = 'bike';
+    const getPropertyValue = (obj, key) => {
+        return obj[key];
+    };
+    const user = {
+        name: 'Mr. X',
+        age: 100
+    };
+    const res = getPropertyValue(user, 'name');
+    console.log(res);
+}
