@@ -140,3 +140,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
     console.log(showData());
 }
+// Conditional types
+{
+}
+// Mapped types
+{
+    const arrOfNumbers = [1, 3, 5];
+    const arrOfStrings = arrOfNumbers.map(num => num.toString());
+    const area = {
+        height: 100,
+        width: '150'
+    };
+}

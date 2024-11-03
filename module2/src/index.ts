@@ -207,7 +207,7 @@
         name: string;
         age: number;
     };
-    
+
     const createPromise = (): Promise<Something> => {
         return new Promise<Something>((resolve, reject) => {
             const data: Something = { name: 'Mr. X', age: 100 };
@@ -225,4 +225,36 @@
     }
 
     console.log(showData())
+}
+
+// Conditional types
+{
+    type a1 = number;
+    type b1 = undefined;
+
+    type x = a1 extends null ? true : false // conditional type
+    type y = a1 extends null ? true : b1 extends undefined ? undefined : any;
+}
+
+// Mapped types
+{
+    const arrOfNumbers: number[] = [1, 3, 5];
+    const arrOfStrings: string[] = arrOfNumbers.map(num => num.toString());
+
+    type AreaNumber = {
+        height: number;
+        width: number;
+    };
+
+    type height = AreaNumber['height']; // look up type
+
+    type AreaString<T> = {
+        [key in keyof T]: T[key]
+    };
+
+    const area: AreaString<{ height: number, width: string }> = {
+        height: 100,
+        width: '150'
+    }
+    
 }
