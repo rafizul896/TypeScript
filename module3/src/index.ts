@@ -42,7 +42,6 @@
     }
 
     const student1 = new Student('Rafiz', 18, 'Phulpur')
-    console.log(student1);
     student1.getSleep(8);
 
     class Teacher extends Person {
@@ -63,3 +62,42 @@
     const teacher1 = new Teacher('Mr. Teacher', 38, 'Phulpur', 'Professor');
 }
 
+// Type Guard Using Typeof & In
+{
+    type AlphaNewmeric = string | number;
+
+    const add = (
+        param1: AlphaNewmeric, param2: AlphaNewmeric
+    ): string | number => {
+        if (typeof param1 === 'number' && typeof param2 === 'number') {
+            return param1 + param2
+        } else {
+            return param1.toString() + param2.toString()
+        }
+    }
+
+    const result1 = add(100, 50);
+    const result2 = add(100, "50");
+    console.log(result1, result2);
+
+    // in guard
+    type NormalUser = {
+        name: string,
+    }
+
+    type AdminUser = {
+        name: string;
+        role: 'admin'
+    }
+
+    const getUser = (user: NormalUser | AdminUser) => {
+        if ('role' in user) {
+            console.log(`My name is ${user.name} and my role is ${user.role}`)
+        } else {
+            console.log(`My name is ${user.name}`)
+        }
+    }
+
+    getUser({ name: 'User', role: 'admin' })
+
+}

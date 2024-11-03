@@ -39,7 +39,6 @@
         }
     }
     const student1 = new Student('Rafiz', 18, 'Phulpur');
-    console.log(student1);
     student1.getSleep(8);
     class Teacher extends Person {
         constructor(name, age, address, designation) {
@@ -54,4 +53,27 @@
         }
     }
     const teacher1 = new Teacher('Mr. Teacher', 38, 'Phulpur', 'Professor');
+}
+// Type Guard Using Typeof & In
+{
+    const add = (param1, param2) => {
+        if (typeof param1 === 'number' && typeof param2 === 'number') {
+            return param1 + param2;
+        }
+        else {
+            return param1.toString() + param2.toString();
+        }
+    };
+    const result1 = add(100, 50);
+    const result2 = add(100, "50");
+    console.log(result1, result2);
+    const getUser = (user) => {
+        if ('role' in user) {
+            console.log(`My name is ${user.name} and my role is ${user.role}`);
+        }
+        else {
+            console.log(`My name is ${user.name}`);
+        }
+    };
+    getUser({ name: 'User', role: 'admin' });
 }
