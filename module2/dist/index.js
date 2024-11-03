@@ -86,3 +86,15 @@
     };
     const resTuple = createArrayWithTuple('Hello', 11111);
 }
+// Constraints In TypeScript
+{
+    const addCourseStudent = (student) => {
+        const course = "Next Level Web Development";
+        return Object.assign(Object.assign({}, student), { course });
+    };
+    const resGenericObj = addCourseStudent({
+        id: 222,
+        name: 'Islam',
+        email: 'islam@gmail.com'
+    });
+}

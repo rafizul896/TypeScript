@@ -116,6 +116,7 @@
         }
     }
 }
+
 // Function with Generics
 {
     const createArray = (param: string): string[] => {
@@ -146,4 +147,29 @@
     }
 
     const resTuple = createArrayWithTuple<string, number>('Hello', 11111);
+}
+
+// Constraints In TypeScript
+{
+    const addCourseStudent = <
+        T extends {
+            id: number,
+            name: string,
+            email: string
+        }
+    >(student: T) => {
+        const course = "Next Level Web Development";
+        return {
+            ...student,
+            course
+        }
+    }
+
+    const resGenericObj = addCourseStudent(
+        {
+            id: 222,
+            name: 'Islam',
+            email: 'islam@gmail.com'
+        }
+    );
 }
