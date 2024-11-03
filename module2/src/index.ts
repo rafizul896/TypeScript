@@ -197,5 +197,32 @@
     }
 
     const res = getPropertyValue(user, 'name');
-    console.log(res)
+    // console.log(res)
+}
+
+// Asynchronous typescript
+{
+    // promise
+    type Something = {
+        name: string;
+        age: number;
+    };
+    
+    const createPromise = (): Promise<Something> => {
+        return new Promise<Something>((resolve, reject) => {
+            const data: Something = { name: 'Mr. X', age: 100 };
+            if (data) {
+                resolve(data)
+            } else {
+                reject('failed to load data')
+            }
+        })
+    }
+    // calling create promise function
+    const showData = async () => {
+        const data: Something = await createPromise();
+        return data
+    }
+
+    console.log(showData())
 }
