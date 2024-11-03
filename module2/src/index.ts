@@ -65,20 +65,21 @@
     const userInfo: GenericTuple<number, { name: string, email: string }> = [11111, { name: 'User', email: 'user@gmail.com' }];
 
     // Generic with interface
-    interface Developer<T> {
-        name: string,
+    interface Developer<T, X = null> {
+        name: string;
         computer: {
             brand: string,
             model: string,
             releaseYear: number
         },
-        smartWatch: T
+        smartWatch: T,
+        bike?: X
     }
 
     type PoorDeveloper = {
-        brand: string,
-        model: string,
-        display: string
+        brand: string;
+        model: string;
+        display: string;
     }
     const poorDeveloper: Developer<PoorDeveloper> = {
         name: 'Rafizul',
@@ -95,12 +96,11 @@
     }
 
     interface RichDeveloper {
-        brand: string,
-        model: string,
-        heartTrack: boolean,
-        sleepTrack: boolean
+        brand: string;
+        model: string;
+        heartTrack: boolean;
+        sleepTrack: boolean;
     }
-
     const richDeveloper: Developer<RichDeveloper> = {
         name: 'Islam',
         computer: {
@@ -115,4 +115,35 @@
             sleepTrack: true
         }
     }
-} 
+}
+// Function with Generics
+{
+    const createArray = (param: string): string[] => {
+        return [param]
+    }
+
+    const createArrayWithGeneric = <T>(param: T): T[] => {
+        return [param]
+    }
+
+    const res = createArray('Apple');
+    const resGeneric = createArrayWithGeneric<boolean>(true);
+
+    interface User {
+        id: number;
+        name: string
+    };
+
+    const resGenericObj = createArrayWithGeneric<User>(
+        {
+            id: 222,
+            name: 'Islam',
+        }
+    );
+
+    const createArrayWithTuple = <X, Y>(param1: X, param2: Y): [X, Y] => {
+        return [param1, param2];
+    }
+
+    const resTuple = createArrayWithTuple<string, number>('Hello', 11111);
+}

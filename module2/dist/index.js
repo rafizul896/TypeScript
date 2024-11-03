@@ -38,4 +38,51 @@
     ];
     const manyThings = ['Apple', 11];
     const userInfo = [11111, { name: 'User', email: 'user@gmail.com' }];
+    const poorDeveloper = {
+        name: 'Rafizul',
+        computer: {
+            brand: 'Hp',
+            model: 'Pavilion 15',
+            releaseYear: 2022
+        },
+        smartWatch: {
+            brand: 'Emilab',
+            model: 'Kw55',
+            display: 'Oled'
+        }
+    };
+    const richDeveloper = {
+        name: 'Islam',
+        computer: {
+            brand: 'Apple',
+            model: 'applw 15',
+            releaseYear: 2024
+        },
+        smartWatch: {
+            brand: 'Apple Watch',
+            model: 'Kw55',
+            heartTrack: true,
+            sleepTrack: true
+        }
+    };
+}
+// Function with Generics
+{
+    const createArray = (param) => {
+        return [param];
+    };
+    const createArrayWithGeneric = (param) => {
+        return [param];
+    };
+    const res = createArray('Apple');
+    const resGeneric = createArrayWithGeneric(true);
+    ;
+    const resGenericObj = createArrayWithGeneric({
+        id: 222,
+        name: 'Islam',
+    });
+    const createArrayWithTuple = (param1, param2) => {
+        return [param1, param2];
+    };
+    const resTuple = createArrayWithTuple('Hello', 11111);
 }
