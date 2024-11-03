@@ -256,5 +256,38 @@
         height: 100,
         width: '150'
     }
-    
+}
+
+// Utility types
+{
+    type Person = {
+        name: string;
+        email?: string;
+        contactNumber: number
+    }
+    // Pick
+    type name = Pick<Person, 'name' | 'email'>
+    // Omit
+    type ContactInfo = Omit<Person, 'name'>
+    // Required
+    type PersonRequired = Required<Person>
+    // Partial
+    type ParsonPartial = Partial<Person>
+    // ReadOnly
+    type PersonReadOnly = Readonly<Person>
+    const Person1: PersonReadOnly = {
+        name: 'Mr. X',
+        email: 'me@gmail.com',
+        contactNumber: 1111
+    }
+    // Record
+    type MyObj = Record<string, string>
+
+    const obj: MyObj = {
+        a: 'Apple',
+        b: 'Banana',
+        c: 'Cherry'
+    }
+
+    const EmptyObj: Record<string, unknown> = {}
 }

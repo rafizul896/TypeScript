@@ -152,3 +152,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         width: '150'
     };
 }
+// Utility types
+{
+    const Person1 = {
+        name: 'Mr. X',
+        email: 'me@gmail.com',
+        contactNumber: 1111
+    };
+    const obj = {
+        a: 'Apple',
+        b: 'Banana',
+        c: 'Cherry'
+    };
+    const EmptyObj = {};
+}
