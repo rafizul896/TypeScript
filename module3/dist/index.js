@@ -152,5 +152,31 @@
         }
     }
     const student1 = new StudentAccount(45, 'Student', 0);
-    console.log(student1.getBalance());
+}
+// Getter and setter
+{
+    class BankAccount {
+        constructor(id, userName, balance) {
+            this.id = id;
+            this.userName = userName;
+            this._balance = balance;
+        }
+        // public addBalance(amount: number) { this._balance = this._balance + amount }
+        set addBalance(amount) {
+            this._balance = this._balance + amount;
+        }
+        // public subtractBalance(amount: number) {this._balance = this._balance - amount;}
+        set subtractBalance(amount) {
+            this._balance = this._balance - amount;
+        }
+        // public getBalance() { return this._balance }
+        get getBalance() {
+            return this._balance;
+        }
+    }
+    const user1 = new BankAccount(44, 'User', .50);
+    user1.addBalance = 19.50; // property er mto kore
+    user1.subtractBalance = 5;
+    const balance = user1.getBalance;
+    console.log(balance);
 }

@@ -195,6 +195,40 @@
         }
     }
 
-    const student1 = new StudentAccount(45,'Student',0);
-    console.log(student1.getBalance())
+    const student1 = new StudentAccount(45, 'Student', 0);
+}
+
+// Getter and setter
+{
+    class BankAccount {
+        public readonly id: number;
+        public userName: string;
+        protected _balance: number;
+
+        constructor(id: number, userName: string, balance: number) {
+            this.id = id;
+            this.userName = userName;
+            this._balance = balance;
+        }
+
+        // public addBalance(amount: number) { this._balance = this._balance + amount }
+        set addBalance(amount: number) {
+            this._balance = this._balance + amount;
+        }
+
+        // public subtractBalance(amount: number) {this._balance = this._balance - amount;}
+        set subtractBalance(amount : number) {
+            this._balance = this._balance - amount
+        }
+            // public getBalance() { return this._balance }
+            get getBalance() {
+                return this._balance;
+            }
+    }
+
+    const user1 = new BankAccount(44, 'User', .50);
+    user1.addBalance = 19.50; // property er mto kore
+    user1.subtractBalance = 5
+    const balance = user1.getBalance;
+    console.log(balance);
 }
