@@ -158,3 +158,43 @@
     getAnimal(cat);
 
 }
+
+// Access modifiers
+{
+    class BankAccount {
+        public readonly id: number;
+        public userName: string;
+        protected _balance: number;
+
+        constructor(id: number, userName: string, balance: number) {
+            this.id = id;
+            this.userName = userName;
+            this._balance = balance;
+        }
+
+        public addBalance(amount: number) {
+            this._balance = this._balance + amount
+        }
+
+        public subtractBalance(amount: number) {
+            this._balance = this._balance - amount
+        }
+
+        public getBalance() {
+            return this._balance
+        }
+    }
+
+    const user1 = new BankAccount(44, 'User', .05);
+    user1.addBalance(10);
+    const balance = user1.getBalance();
+
+    class StudentAccount extends BankAccount {
+        test() {
+            this._balance = balance;
+        }
+    }
+
+    const student1 = new StudentAccount(45,'Student',0);
+    console.log(student1.getBalance())
+}

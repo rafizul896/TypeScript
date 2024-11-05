@@ -125,3 +125,32 @@
     const cat = new Cat('Cat Bhai', 'cat');
     getAnimal(cat);
 }
+// Access modifiers
+{
+    class BankAccount {
+        constructor(id, userName, balance) {
+            this.id = id;
+            this.userName = userName;
+            this._balance = balance;
+        }
+        addBalance(amount) {
+            this._balance = this._balance + amount;
+        }
+        subtractBalance(amount) {
+            this._balance = this._balance - amount;
+        }
+        getBalance() {
+            return this._balance;
+        }
+    }
+    const user1 = new BankAccount(44, 'User', .05);
+    user1.addBalance(10);
+    const balance = user1.getBalance();
+    class StudentAccount extends BankAccount {
+        test() {
+            this._balance = balance;
+        }
+    }
+    const student1 = new StudentAccount(45, 'Student', 0);
+    console.log(student1.getBalance());
+}
