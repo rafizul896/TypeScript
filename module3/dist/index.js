@@ -178,5 +178,20 @@
     user1.addBalance = 19.50; // property er mto kore
     user1.subtractBalance = 5;
     const balance = user1.getBalance;
-    console.log(balance);
+}
+// Statics in OOP
+{
+    class Counter {
+        increment() {
+            return (Counter.count = Counter.count + 1);
+        }
+        decrement() {
+            return (Counter.count = Counter.count - 1);
+        }
+    }
+    Counter.count = 0;
+    const instance1 = new Counter();
+    instance1.increment(); // --> different memory
+    const instance2 = new Counter();
+    instance2.increment(); // --> different memory
 }
