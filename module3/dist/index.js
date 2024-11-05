@@ -195,3 +195,67 @@
     const instance2 = new Counter();
     instance2.increment(); // --> different memory
 }
+// Polymorphism
+{
+    {
+        class Person {
+            getSleep() {
+                console.log(`I am sleeping for 8 houres perday`);
+            }
+        }
+        class Student extends Person {
+            getSleep() {
+                console.log(`I am sleeping for 7 houres perday`);
+            }
+        }
+        class Developer extends Person {
+            getSleep() {
+                console.log(`I am sleeping for 6 houres perday`);
+            }
+        }
+        const getSleepHours = (param) => {
+            param.getSleep();
+        };
+        const person1 = new Person();
+        const person2 = new Student();
+        const person3 = new Developer();
+        // getSleepHours(person1)
+        // getSleepHours(person3)
+    }
+    {
+        class Shape {
+            getArea() {
+                return 0;
+            }
+        }
+        class Circle extends Shape {
+            constructor(redius) {
+                super();
+                this.redius = redius;
+            }
+            getArea() {
+                return Math.PI * this.redius * this.redius;
+            }
+        }
+        class Rectangle extends Shape {
+            constructor(height, width) {
+                super();
+                this.height = height;
+                this.width = width;
+            }
+            getArea() {
+                return this.height * this.width;
+            }
+        }
+        // Polymorphism
+        const getShapeArea = (param) => {
+            console.log(param.getArea());
+        };
+        const shape1 = new Shape();
+        const shape2 = new Circle(2);
+        const shape3 = new Rectangle(4, 5);
+        getShapeArea(shape1);
+        getShapeArea(shape2);
+        getShapeArea(shape3);
+    }
+}
