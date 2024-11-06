@@ -254,8 +254,44 @@
         const shape1 = new Shape();
         const shape2 = new Circle(2);
         const shape3 = new Rectangle(4, 5);
-        getShapeArea(shape1);
-        getShapeArea(shape2);
-        getShapeArea(shape3);
+        // getShapeArea(shape1);
+        // getShapeArea(shape2);
+        // getShapeArea(shape3);
     }
+}
+// Abstraction in OOP
+{
+    // real
+    class Car1 {
+        startEngine() {
+            console.log('Starting Engine');
+        }
+        stopEngine() {
+            console.log('Stopping Engine');
+        }
+        move() {
+            console.log('Move');
+        }
+        test() {
+            console.log('Test');
+        }
+    }
+    const toyotaCar = new Car1();
+    // toyotaCar.startEngine();
+    // abstract class --> idea
+    class Car2 {
+    }
+    class YamahaBike extends Car2 {
+        startEngine() {
+            console.log('Starting Engine YamahaBike');
+        }
+        stopEngine() {
+            console.log('Stopping Engine YamahaBike');
+        }
+        move() {
+            console.log('Move YamahaBike');
+        }
+    }
+    const fzs = new YamahaBike();
+    // fzs.stopEngine()
 }

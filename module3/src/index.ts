@@ -329,8 +329,62 @@
         const shape2 = new Circle(2);
         const shape3 = new Rectangle(4, 5);
 
-        getShapeArea(shape1);
-        getShapeArea(shape2);
-        getShapeArea(shape3);
+        // getShapeArea(shape1);
+        // getShapeArea(shape2);
+        // getShapeArea(shape3);
     }
+}
+
+// Abstraction in OOP
+{
+    //  --> 1. interface  2. abstract
+
+    // idea
+    interface Vehicle1 {
+        startEngine(): void;
+        stopEngine(): void;
+        move(): void;
+    }
+    // real
+    class Car1 implements Vehicle1 {
+        startEngine(): void {
+            console.log('Starting Engine');
+        }
+        stopEngine(): void {
+            console.log('Stopping Engine');
+        }
+        move(): void {
+            console.log('Move');
+        }
+        test() {
+            console.log('Test');
+        }
+    }
+
+    const toyotaCar = new Car1();
+    // toyotaCar.startEngine();
+
+    // abstract class --> idea
+    abstract class Car2 {
+        abstract startEngine(): void;
+        abstract stopEngine(): void;
+        abstract move(): void;
+    }
+
+    class YamahaBike extends Car2 {
+        startEngine(): void {
+            console.log('Starting Engine YamahaBike')
+        }
+
+        stopEngine(): void {
+            console.log('Stopping Engine YamahaBike')
+        }
+
+        move(): void {
+            console.log('Move YamahaBike')
+        }
+    }
+
+    const fzs = new YamahaBike()
+    // fzs.stopEngine()
 }
