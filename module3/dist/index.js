@@ -295,3 +295,50 @@
     const fzs = new YamahaBike();
     // fzs.stopEngine()
 }
+// practice
+{
+    const numArray = [1, 3, 5];
+    const stringArray = ['a', 'b', 'c'];
+    const boolArray = [true, false, true];
+    ;
+    const person1 = {
+        fullName: 'user',
+        age: 20,
+        contactInfo: {
+            email: 'user@gmail.com',
+            mobileNumber: 10
+        }
+    };
+    function getLength(str) {
+        return str.length;
+    }
+    function getBookProperty(book, key) {
+        return book[key];
+    }
+    const myBook = {
+        title: 'Data stracture and algorithem',
+        author: 'Janker Mahbub',
+        publishedYear: 2020
+    };
+    getBookProperty(myBook, "title");
+    const user = {
+        id: 222222,
+        name: 'User',
+        email: 'user@gmail.com',
+        role: 'user'
+    };
+    const newUser = {
+        id: 3,
+        name: 'new user',
+        email: 'newuser@gmail.com',
+        role: 'admin'
+    };
+    const checkAdmin = (user) => {
+        if ('role' in user && user.role === 'admin') {
+            console.log('This User is Amin');
+        }
+        else {
+            console.log('This is a Normal User');
+        }
+    };
+}

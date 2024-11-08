@@ -388,3 +388,99 @@
     const fzs = new YamahaBike()
     // fzs.stopEngine()
 }
+
+// practice
+
+{
+
+    type ArrayType<T> = Array<T>
+
+    const numArray: ArrayType<number> = [1, 3, 5];
+    const stringArray: ArrayType<string> = ['a', 'b', 'c'];
+    const boolArray: ArrayType<boolean> = [true, false, true];
+
+    type ContactInfo<T, U> = {
+        email: T;
+        mobileNumber: U;
+    };
+
+    interface Person<T, U, V> {
+        fullName: V;
+        age: T;
+        contactInfo: U;
+    };
+
+    const person1: Person<number,
+        ContactInfo<string, number>,
+        string
+    > = {
+        fullName: 'user',
+        age: 20,
+        contactInfo: {
+            email: 'user@gmail.com',
+            mobileNumber: 10
+        }
+    };
+
+
+    function getLength<T extends { length: number }>(str: T) {
+        return str.length
+    }
+
+    // key Of
+
+    type Book = {
+        title: string;
+        author: string;
+        publishedYear: number;
+    }
+
+    function getBookProperty<T, K extends keyof T>(book: T, key: K): T[K] {
+        return book[key]
+    }
+
+    const myBook: Book = {
+        title: 'Data stracture and algorithem',
+        author: 'Janker Mahbub',
+        publishedYear: 2020
+    }
+
+    getBookProperty(myBook, "title")
+
+    const user = {
+        id: 222222,
+        name: 'User',
+        email: 'user@gmail.com',
+        role: 'user'
+    };
+
+    type userDetails = typeof user;
+
+    const newUser: userDetails = {
+        id: 3,
+        name: 'new user',
+        email: 'newuser@gmail.com',
+        role: 'admin'
+    }
+
+
+    const checkAdmin = (user: userDetails) => {
+        if ('role' in user && user.role === 'admin') {
+            console.log('This User is Amin')
+        } else {
+            console.log('This is a Normal User')
+        }
+    }
+
+    type Todo = {
+        task: string;
+        completed: boolean;
+        sueDate: string
+    }
+
+    // --> optional Todo
+    type OptionalTodo = {
+        [T in keyof Todo]?: Todo[T]
+    }
+}
+
