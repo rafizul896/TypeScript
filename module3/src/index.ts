@@ -484,3 +484,11 @@
     }
 }
 
+
+// more practice 
+{
+    let anything : any;
+    anything = 'Type Assertion';
+    (anything as string).toLowerCase();
+}
+

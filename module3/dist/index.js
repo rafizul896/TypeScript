@@ -342,3 +342,9 @@
         }
     };
 }
+// more practice 
+{
+    let anything;
+    anything = 'Type Assertion';
+    anything.toLowerCase();
+}
