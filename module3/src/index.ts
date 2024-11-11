@@ -281,8 +281,6 @@
         const person2 = new Student();
         const person3 = new Developer();
 
-        // getSleepHours(person1)
-        // getSleepHours(person3)
     }
 
     {
@@ -329,9 +327,6 @@
         const shape2 = new Circle(2);
         const shape3 = new Rectangle(4, 5);
 
-        // getShapeArea(shape1);
-        // getShapeArea(shape2);
-        // getShapeArea(shape3);
     }
 }
 
@@ -482,13 +477,5 @@
     type OptionalTodo = {
         [T in keyof Todo]?: Todo[T]
     }
-}
-
-
-// more practice 
-{
-    let anything : any;
-    anything = 'Type Assertion';
-    (anything as string).toLowerCase();
 }
 
