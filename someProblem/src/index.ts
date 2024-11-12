@@ -77,4 +77,18 @@
     const car1 = new Car("BMW", 'K90', 2020);
     car1.displayInfo();
     console.log(car1);
+
+    // problem-9
+    {
+    
+        const validateKeys = <T extends object>(obj: T, keys: (keyof T)[]): boolean => {
+            for (const key of keys) {
+                if (!(key in obj)) {
+                    return false
+                }
+            }
+            return true;
+        }
+    
+    }
 }
