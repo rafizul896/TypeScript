@@ -91,4 +91,55 @@
         }
     
     }
+
+    // problem-10
+    {
+
+        class Car {
+            make: string;
+            model: string;
+            year: number;
+    
+            constructor(make: string, model: string, year: number) {
+                this.make = make;
+                this.model = model;
+                this.year = year;
+            }
+    
+            getCarAge() {
+                const currentYear = new Date().getFullYear();
+                const gapYear = currentYear - this.year
+    
+                console.log(`${gapYear} (assuming current year is ${currentYear})`)
+            }
+        }
+    
+    }
+
+    // problem-11
+    {
+    
+        type Circle = {
+            shape: 'circle';
+            radius: number;
+        }
+    
+        type Rectangle = {
+            shape: 'rectangle';
+            width: number;
+            height: number
+        }
+    
+    
+        const calculateShapeArea = (shapeArea: Circle | Rectangle): number => {
+            if (shapeArea.shape === "circle") {
+                return parseFloat((Math.PI * shapeArea.radius * shapeArea.radius).toFixed(2));
+            } else if (shapeArea.shape === "rectangle") {
+                return shapeArea.height * shapeArea.width
+            } else {
+                return 0;
+            }
+        }
+    
+    }
 }

@@ -417,6 +417,8 @@
         }
     };
 
+    console.log('Checking')
+
 
     function getLength<T extends { length: number }>(str: T) {
         return str.length

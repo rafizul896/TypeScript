@@ -219,8 +219,6 @@
         const person1 = new Person();
         const person2 = new Student();
         const person3 = new Developer();
-        // getSleepHours(person1)
-        // getSleepHours(person3)
     }
     {
         class Shape {
@@ -254,9 +252,6 @@
         const shape1 = new Shape();
         const shape2 = new Circle(2);
         const shape3 = new Rectangle(4, 5);
-        // getShapeArea(shape1);
-        // getShapeArea(shape2);
-        // getShapeArea(shape3);
     }
 }
 // Abstraction in OOP
@@ -309,6 +304,7 @@
             mobileNumber: 10
         }
     };
+    console.log('Checking');
     function getLength(str) {
         return str.length;
     }
@@ -341,10 +337,4 @@
             console.log('This is a Normal User');
         }
     };
-}
-// more practice 
-{
-    let anything;
-    anything = 'Type Assertion';
-    anything.toLowerCase();
 }
